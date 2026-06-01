@@ -44,10 +44,47 @@
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
 
+    /* ===== DEMO BAR ===== */
+    .demo-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: var(--navy);
+      color: rgba(255,255,255,.9);
+      font-size: 12px;
+      font-weight: 500;
+      text-align: center;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      letter-spacing: .02em;
+    }
+    .demo-bar-badge {
+      background: var(--teal);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 50px;
+      letter-spacing: .05em;
+      flex-shrink: 0;
+    }
+    .demo-bar a {
+      color: var(--teal-light);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    @media (max-width: 600px) {
+      .demo-bar { font-size: 11px; gap: 7px; padding: 7px 12px; }
+      .demo-bar-text-sub { display: none; }
+    }
+
     /* ===== HEADER ===== */
     .header {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 36px; left: 0; right: 0;
       z-index: 100;
       background: rgba(255,255,255,.96);
       backdrop-filter: blur(12px);
@@ -105,7 +142,7 @@
       position: relative;
       display: flex;
       align-items: center;
-      padding-top: 68px;
+      padding-top: calc(68px + 36px); /* header + demo bar */
       overflow: hidden;
     }
     .hero-bg {
@@ -956,7 +993,7 @@
       .hero-bg  { display: none; }
       .hero::after { display: none; }
       .hero-content {
-        padding: 40px 24px 56px;
+        padding: 48px 24px 56px;
         max-width: 100%;
       }
       .hero-title { font-size: clamp(26px, 7vw, 34px); }
@@ -1017,6 +1054,12 @@
 <body>
 
 <!-- ===== HEADER ===== -->
+<!-- ===== DEMO BAR ===== -->
+<div class="demo-bar">
+  <span class="demo-bar-badge">DEMO</span>
+  <span>これはポートフォリオ用のデモサイトです。<span class="demo-bar-text-sub">実在の事務所・サービスではありません。</span></span>
+</div>
+
 <header class="header">
   <div class="header-inner">
     <a href="#" class="logo">
