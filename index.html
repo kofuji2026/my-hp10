@@ -148,32 +148,22 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      /* 背景はブランドカラーの淡いグラデーション */
-      background: linear-gradient(135deg, #edf6f5 0%, #e6f1ef 45%, #ede8df 100%);
-    }
-    /* 右側に写真を小さく配置するための疑似要素 */
-    .hero-bg::after {
-      content: '';
-      position: absolute;
-      right: 0; top: 0; bottom: 0;
-      width: 38%;
       background-image: url('image2.png');
-      background-size: auto 72%;
-      background-repeat: no-repeat;
-      background-position: 55% bottom;
+      background-size: cover;
+      background-position: 22% top;
     }
-    /* 写真との境界を自然になじませるフェード */
+    /* 左側のみ白くフェード、顔・右側はクリアに */
     .hero::after {
       content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(
         to right,
-        rgba(237,246,245,1)   0%,
-        rgba(237,246,245,1)   36%,
-        rgba(237,246,245,.85) 48%,
-        rgba(237,246,245,.15) 62%,
-        rgba(237,246,245,0)   72%
+        rgba(255,255,255,1)   0%,
+        rgba(255,255,255,1)   32%,
+        rgba(255,255,255,.65) 44%,
+        rgba(255,255,255,.1)  54%,
+        rgba(255,255,255,0)   62%
       );
       pointer-events: none;
       z-index: 1;
