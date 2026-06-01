@@ -149,8 +149,9 @@
       position: absolute;
       inset: 0;
       background-image: url('image2.png');
-      background-size: cover;
-      background-position: 22% top;
+      background-size: 115%;
+      background-position: 22% 6%;
+      background-repeat: no-repeat;
     }
     /* 左側のみ白くフェード、顔・右側はクリアに */
     .hero::after {
@@ -160,10 +161,10 @@
       background: linear-gradient(
         to right,
         rgba(255,255,255,1)   0%,
-        rgba(255,255,255,1)   32%,
-        rgba(255,255,255,.65) 44%,
-        rgba(255,255,255,.1)  54%,
-        rgba(255,255,255,0)   62%
+        rgba(255,255,255,1)   38%,
+        rgba(255,255,255,.75) 50%,
+        rgba(255,255,255,.15) 62%,
+        rgba(255,255,255,0)   72%
       );
       pointer-events: none;
       z-index: 1;
